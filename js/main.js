@@ -13,7 +13,12 @@ let formValidation = () => {
       msg.innerHTML = "You should write a post";
   } else {
       msg.innerHTML = "";
+      acceptData();
   }
 };
 
+let data = {};
 
+let acceptData = () => {
+    data["text"] = input.value;
+};
