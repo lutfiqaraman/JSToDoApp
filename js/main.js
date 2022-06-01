@@ -21,4 +21,21 @@ let data = {};
 
 let acceptData = () => {
     data["text"] = input.value;
+    createPost();
 };
+
+let createPost = () => {
+    posts.innerHTML += `
+        <div>
+            <p>${data.text}</p>
+            <span class="options">
+            <i onClick="editPost(this)" class="fas fa-edit"></i>
+            <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
+            </span>
+        </div>
+    `;
+
+    input.value = "";
+};
+
+
