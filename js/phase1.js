@@ -16,7 +16,12 @@ let formValidation = () => {
         console.log("failure");
         msg.innerHTML = "Task cannot be blank";
     } else {
-        console.log("success");
-        msg.innerHTML = "";
+        acceptData();
+        add.setAttribute("data-bs-dismiss", "modal");
+        add.click();
+
+        (() => {
+            add.setAttribute("data-bs-dismiss", "");
+        })();
     }
 };
